@@ -1,12 +1,8 @@
-addEventListener("fetch", (event) => {
-
-  const headers = event.request.headers.values().map(
-    m => m
-  )
-
+addEventListener("fetch", (event:Event) => {
+  let headers = event.request.headers.values()
   const json = JSON.stringify(
       {body: `${event.request.body}`,
-        headers: `${headers}` })
+        headers: `${JSON.stringify(headers)}` })
   const response = new Response(json, {
     headers: { "content-type": "application/json; charset=UTF-8", },
   });
