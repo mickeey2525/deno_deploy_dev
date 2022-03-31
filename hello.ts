@@ -1,6 +1,6 @@
 addEventListener("fetch", (event) => {
   let headers = event.request.headers.entries()
-  for (v of headers) {
+  for (let v of headers) {
     console.log(v)
   }
   const json = JSON.stringify(
