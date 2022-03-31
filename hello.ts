@@ -1,5 +1,6 @@
-addEventListener("fetch", (event:Event) => {
+addEventListener("fetch", (event) => {
   let headers = event.request.headers.entries()
+  console.log(headers)
   const json = JSON.stringify(
       {body: `${event.request.body}`,
         headers: `${headers}` })
