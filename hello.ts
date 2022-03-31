@@ -1,7 +1,8 @@
 addEventListener("fetch", (event) => {
-  let headers = event.request.headers.entries()
-  for (let v of headers) {
-    console.log(v)
+  let rawheaders = event.request.headers.entries()
+  let headers = []
+  for (let v of rawheaders) {
+    headers.push(v)
   }
   const json = JSON.stringify(
       {body: `${event.request.body}`,
