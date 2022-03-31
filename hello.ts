@@ -1,8 +1,7 @@
 addEventListener("fetch", (event) => {
-  console.log(event.request.headers.values())
   const json = JSON.stringify(
       {body: `${event.request.body}`,
-        headers: `${event.request.headers.values()}` })
+        headers: `${Array.form(event.request.headers.values())}` })
   const response = new Response(json, {
     headers: { "content-type": "application/json; charset=UTF-8", },
   });
